@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom script
+git.sh
+*.json
+nohup.out
+/rethinkdb_data

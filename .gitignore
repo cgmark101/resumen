@@ -130,6 +130,5 @@ dmypy.json
 
 # Custom script
 git.sh
-*.json
 nohup.out
 /rethinkdb_data

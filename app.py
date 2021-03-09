@@ -51,7 +51,7 @@ async def email(
         'fecha':current_date,
         'hora':current_time
         })
-    return RedirectResponse('/ok', status_code=status.HTTP_302_FOUND)
+    return 'ok'
 
 """ @app.get('/ok', response_class=HTMLResponse, name='styles')
 async def ok(request: Request):

@@ -2,21 +2,8 @@ import os
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
-from datetime import datetime, date
-from deta import Deta 
 from fastapi.responses import HTMLResponse
 import starlette.status as status
-
-today = date.today()
-now = datetime.now()
-
-current_date = today.strftime("%d/%m/%Y")
-current_time = now.strftime("%H:%M:%S")
-
-
-key = 'b08z8w5z_svn4Ez3GNhn7DpZkSumBYjjNborFy4Yb'
-deta = Deta(key)
-db = deta.Base("contact")
 
 app = FastAPI()
 

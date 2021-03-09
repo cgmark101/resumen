@@ -34,7 +34,7 @@ async def index(request: Request):
 @app.get('/styles', response_class=HTMLResponse, name='styles')
 async def style(request: Request):
     return templates.TemplateResponse("styles.html", {"request": request})
-"""
+
 
 @app.post('/form')
 async def email(
@@ -51,8 +51,9 @@ async def email(
         'fecha':current_date,
         'hora':current_time
         })
+    #return RedirectResponse('/ok', status_code=status.HTTP_302_FOUND)
     return 'ok'
 
-""" @app.get('/ok', response_class=HTMLResponse, name='styles')
+ @app.get('/ok', response_class=HTMLResponse, name='styles')
 async def ok(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})  """

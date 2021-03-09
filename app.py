@@ -53,6 +53,6 @@ async def email(
         })
     return RedirectResponse('/ok', status_code=status.HTTP_302_FOUND)
 
-@app.get('/ok', response_class=HTMLResponse, name='styles')
+""" @app.get('/ok', response_class=HTMLResponse, name='styles')
 async def ok(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request}) 
+    return templates.TemplateResponse("index.html", {"request": request})  """

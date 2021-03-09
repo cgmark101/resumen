@@ -20,16 +20,16 @@ db = deta.Base("contact")
 
 app = FastAPI()
 
-#templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="templates")
 
 @app.get('/')
 async def home():
     return 'ok'
 
-""" @app.get('/index', response_class=HTMLResponse, name='index')
+ @app.get('/index', response_class=HTMLResponse, name='index')
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
-
+"""
 @app.get('/styles', response_class=HTMLResponse, name='styles')
 async def style(request: Request):
     return templates.TemplateResponse("styles.html", {"request": request})

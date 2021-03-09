@@ -26,24 +26,6 @@ templates = Jinja2Templates(directory="templates")
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-
-@app.post('/form')
-async def email(
-    request: Request,
-    contactName: str = Form(...), 
-    contactEmail: str = Form(...), 
-    contactSubject: str = Form(...), 
-    contactMessage: str = Form(...)):
-    db.insert({
-        'nombre':contactName, 
-        'email':contactEmail, 
-        'sujeto':contactSubject, 
-        'mensaje':contactMessage,
-        'fecha':current_date,
-        'hora':current_time
-        })
-    return RedirectResponse('/ok', status_code=status.HTTP_302_FOUND)
-
 @app.get('/ok', response_class=HTMLResponse, name='styles')
 async def ok(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})

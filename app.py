@@ -34,6 +34,7 @@ async def index(request: Request):
 @app.get('/styles', response_class=HTMLResponse, name='styles')
 async def style(request: Request):
     return templates.TemplateResponse("styles.html", {"request": request})
+"""
 
 @app.post('/form')
 async def email(
@@ -54,4 +55,4 @@ async def email(
 
 @app.get('/ok', response_class=HTMLResponse, name='styles')
 async def ok(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request}) """
+    return templates.TemplateResponse("index.html", {"request": request}) 

@@ -1,18 +1,14 @@
-import os
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
-import starlette.status as status
+from flask import Flask, render_template
 
-app = FastAPI()
+app = Flask(__name__)
 
-templates = Jinja2Templates(directory="templates")
+@app.route('/')
+def index():
+    return render_template("index.html")
 
-@app.get('/', response_class=HTMLResponse, name='index')
-async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+@app.route('/ok.html')
+def ok():
+    return render_template("ok.html")
 
-@app.get('/ok', response_class=HTMLResponse, name='styles')
-async def ok(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+if __name__ == '__main__':
+    app.run()

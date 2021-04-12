@@ -1,5 +1,2 @@
-fastapi
-jinja2
-aiofiles
-uvicorn
-deta
+flask
+Frozen-Flask
